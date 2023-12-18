@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<menuitem
+id="menu_notes_root"
+name="NotesTest"
+sequence="10"/>
+</odoo>

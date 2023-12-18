@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id = "website_feature_snippet" name="NEW FEATURE">
+        <section class="oe_structure container-fluid">
+            <div class="row">
+                <section class="col-sm in-1">
+
+                </section>
+                <section class="col-sm in-2">
+                    <h1> BEST OFFER SALE </h1>
+                    <p>....................</p>
+                    <p>....................</p>
+                    <!-- <htmlData><![CDATA[
+                        <html>
+                            <head>
+                              <link rel="stylesheet" href="myStyle.css">
+                              <script src="OpenLayers.js"></script>
+                              <script src="Display.js"></script>
+                            </head>
+                            <body onload="init();">
+                                Your HTML's body
+                              <div id="basicMap"></div>
+                            </body>
+                          </html>
+                     ]]>
+                    </htmlData> -->
+                </section>
+            </div>
+        </section>
+    </template>
+
+    <template id = "website_dynamic_snippet" name="Dynamic Snippet">
+        <section class="oe_structure container-fluid js_dynamic_snippet_osm">
+            <div class="row">
+                <section class="col-sm in-1">
+
+                </section>
+                <section class="col-sm in-2">
+                    <h1> BEST OFFER SALE </h1>
+                    <p id="js_product_sold"></p>
+                </section>
+            </div>
+        </section>
+    </template>
+
+    <template id="website_content_snippet" name="Inner content snippet">
+        <div class="s_text_highlight">
+            <h1> Inner Content </h1>
+            <p>....................</p>
+            <p>....................</p>
+        </div>
+    </template>
+
+    <template id="static_snippet_structure" inherit_id="website.snippets" name = "osm snippets">
+        <xpath expr = "//div[@id='snippet_feature']/div[hasclass('o_panel_body')]" position = "inside">
+            <t t-snippet="osm_website.website_feature_snippet"></t>
+        </xpath>
+        <xpath expr = "//div[@id='snippet_content']/div[hasclass('o_panel_body')]" position = "inside">
+            <t t-snippet="osm_website.website_content_snippet"></t>
+        </xpath>
+        <!-- xpath for structure was skipped -->
+        <xpath expr = "//div[@id='snippet_effect']/div[hasclass('o_panel_body')]" position = "inside">
+            <t t-snippet="osm_website.website_dynamic_snippet"></t>
+        </xpath>
+    </template>
+</odoo>
