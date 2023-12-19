@@ -12,18 +12,34 @@
                     <p>....................</p>
                     <!-- <htmlData><![CDATA[
                         <html>
-                            <head>
-                              <link rel="stylesheet" href="myStyle.css">
+                            <head> -->
+                              <!-- <link rel="stylesheet" href="myStyle.css"> -->
+    
+                                <!-- <script type="text/javascript"></script>
                               <script src="OpenLayers.js"></script>
-                              <script src="Display.js"></script>
-                            </head>
-                            <body onload="init();">
-                                Your HTML's body
+                              <script src="Display.js"></script> -->
+                              <!-- <script type="text/javascript" src="/yourmodule/static/src/js/abtesting.js"/> -->
+                                <!-- <xpath expr=".">
+                                    <script type="text/javascript" src="/osm_website/static/src/js/OpenLayers.js"></script>
+                                    
+                                </xpath> -->
+                                <script type="text/javascript" src="/osm_website/static/src/js/Display.js" onload="init()"></script>
+                                <style>
+                                    #basicMap{
+                                    width: 500px;
+                                    height: 500px;
+                                    margin: 0;
+                                    background-color:#f00;
+                                }</style>
+
+                            <!-- </head> -->
+                            <!-- <body onload="init();"> -->
+                                <!-- Your HTML's body -->
                               <div id="basicMap"></div>
-                            </body>
+                            <!-- </body>
                           </html>
-                     ]]>
-                    </htmlData> -->
+                     ]]> -->
+                    <!-- </htmlData> -->
                 </section>
             </div>
         </section>

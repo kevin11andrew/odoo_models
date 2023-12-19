@@ -1,4 +1,5 @@
 function init() {
+    console.log("KEVIN ")
     map = new OpenLayers.Map("basicMap");
     var mapnik         = new OpenLayers.Layer.OSM();
     var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
