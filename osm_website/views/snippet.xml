@@ -23,7 +23,9 @@
                                     <script type="text/javascript" src="/osm_website/static/src/js/OpenLayers.js"></script>
                                     
                                 </xpath> -->
+                                <script type="text/javascript" src="/osm_website/static/src/js/OpenLayers.js" onload="init()"></script>
                                 <script type="text/javascript" src="/osm_website/static/src/js/Display.js" onload="init()"></script>
+                                <img src="/osm_website/static/src/img/Time Table.drawio.svg"></img>
                                 <style>
                                     #basicMap{
                                     width: 500px;
@@ -35,7 +37,7 @@
                             <!-- </head> -->
                             <!-- <body onload="init();"> -->
                                 <!-- Your HTML's body -->
-                              <div id="basicMap"></div>
+                              <div id="basicMap" onload="init()"></div>
                             <!-- </body>
                           </html>
                      ]]> -->

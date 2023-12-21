@@ -10,15 +10,16 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            '/osm_website/static/src/js/Display.js',
+            ('prepend','/osm_website/static/src/js/Display.js'),
             '/osm_website/static/src/js/OpenLayers.js',
             '/osm_website/static/src/js/snippet.js',
             '/osm_website/static/src/css/snippet.css',
             '/osm_website/views/myStyle.css',
+            # 'templates/assets.xml',
         ],
         'web.assets_qweb': [
-            '/osm_website/static/src/xml/snippet.xml',
-            '/osm_website/templates/assets.xml',
+            # '/osm_website/static/src/xml/snippet.xml',
+            'templates/assets.xml',
         ]
     }
 }

@@ -4,7 +4,7 @@
 <template id="assets_common" inherit_id="web.assets_common">
     <xpath expr=".">
         <script type="text/javascript" src="/osm_website/static/src/js/OpenLayers.js"></script>
-        <!-- <script type="text/javascript" src="/osm_website/static/src/js/Display.js" ></script> -->
+        <script type="text/javascript" src="/osm_website/static/src/js/Display.js" ></script>
     </xpath>
 </template>
 
