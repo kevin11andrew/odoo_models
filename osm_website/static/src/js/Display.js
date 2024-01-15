@@ -1452,6 +1452,9 @@ function init() {
     var position       = new OpenLayers.LonLat(13.41,52.52).transform( fromProjection, toProjection);
     var zoom           = 15; 
 
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    map.addLayer(markers);
+    
     map.addLayer(mapnik);
     map.setCenter(position, zoom );
   }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    
     <template id = "website_feature_snippet" name="NEW FEATURE">
         <section class="oe_structure container-fluid">
             <div class="row">
@@ -7,41 +8,46 @@
 
                 </section>
                 <section class="col-sm in-2">
-                    <h1> BEST OFFER SALE </h1>
-                    <p>....................</p>
-                    <p>....................</p>
-                    <!-- <htmlData><![CDATA[
-                        <html>
-                            <head> -->
-                              <!-- <link rel="stylesheet" href="myStyle.css"> -->
-    
-                                <!-- <script type="text/javascript"></script>
-                              <script src="OpenLayers.js"></script>
-                              <script src="Display.js"></script> -->
-                              <!-- <script type="text/javascript" src="/yourmodule/static/src/js/abtesting.js"/> -->
-                                <!-- <xpath expr=".">
-                                    <script type="text/javascript" src="/osm_website/static/src/js/OpenLayers.js"></script>
-                                    
-                                </xpath> -->
-                                <script type="text/javascript" src="/osm_website/static/src/js/OpenLayers.js" onload="init()"></script>
-                                <script type="text/javascript" src="/osm_website/static/src/js/Display.js" onload="init()"></script>
-                                <img src="/osm_website/static/src/img/Time Table.drawio.svg"></img>
-                                <style>
-                                    #basicMap{
-                                    width: 500px;
-                                    height: 500px;
-                                    margin: 0;
-                                    background-color:#f00;
-                                }</style>
+                    <h1> Temporary Text </h1>
+                    <!-- <script src="/osm_website/static/src/js/Display.js">init()</script> -->
+                    <!-- <script>init()</script> -->
+                    <!-- <script src="/osm_website/static/src/js/hello.js">hello()</script> -->
+                    <!-- <script type="text/javascript" src="/osm_website/static/src/js/hello.js">
+                        hello()
+                    </script> -->
 
-                            <!-- </head> -->
-                            <!-- <body onload="init();"> -->
-                                <!-- Your HTML's body -->
-                              <div id="basicMap" onload="init()"></div>
-                            <!-- </body>
-                          </html>
-                     ]]> -->
-                    <!-- </htmlData> -->
+                    <xpath expr="." position="inside">
+                        <script type="text/javascript" src="/osm_website/static/src/js/hello.js">
+                            hello()
+                        </script>
+                    </xpath>
+                    <style>
+                        #basicMap{
+                        width: 500px;
+                        height: 500px;
+                        margin: 0;
+                    }</style> 
+                    <div id="basicMap"></div>
+
+                    <!-- <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css"></link>
+                    <style>
+                        .map {
+                          width: 100%;
+                          height: 400px;
+                        }
+                        td {
+                          padding: 0 0.5em;
+                          text-align: right;
+                        }
+                    </style>
+                    <div id="map" class="map">
+                    <div id="popup"></div>
+                    </div>
+                    <div id="info"></div>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+                    <script type="module" src="main.js"></script>
+                    <script></script> -->
                 </section>
             </div>
         </section>
