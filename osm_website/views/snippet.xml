@@ -9,25 +9,30 @@
                 </section>
                 <section class="col-sm in-2">
                     <h1> Temporary Text </h1>
+                    
+                    <script>createMap()</script>
+                    <div id="map"></div>
                     <!-- <script src="/osm_website/static/src/js/Display.js">init()</script> -->
-                    <!-- <script>init()</script> -->
+                    
                     <!-- <script src="/osm_website/static/src/js/hello.js">hello()</script> -->
                     <!-- <script type="text/javascript" src="/osm_website/static/src/js/hello.js">
                         hello()
                     </script> -->
 
-                    <xpath expr="." position="inside">
-                        <script type="text/javascript" src="/osm_website/static/src/js/hello.js">
-                            hello()
-                        </script>
-                    </xpath>
+
+                    <!-- HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH -->
+                    <!-- <script>hello()</script>
+                    <script>init()</script>
+                    
                     <style>
                         #basicMap{
                         width: 500px;
                         height: 500px;
                         margin: 0;
                     }</style> 
-                    <div id="basicMap"></div>
+                    <div id="basicMap"></div> -->
+                    <!-- HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH -->
+
 
                     <!-- <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css"></link>
@@ -62,6 +67,7 @@
                 <section class="col-sm in-2">
                     <h1> BEST OFFER SALE </h1>
                     <p id="js_product_sold"></p>
+                    <script>createMap()</script>
                 </section>
             </div>
         </section>
