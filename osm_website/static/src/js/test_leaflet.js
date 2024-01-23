@@ -1,4 +1,4 @@
-function createMap()
+function createMap() //createMap(place) 
 {
     console.log("HELLO THERE")
     var map = L.map('map').setView([51.505, -0.09], 14);
@@ -12,7 +12,7 @@ function createMap()
         .then(parsedResult => {
             console.log(parsedResult.length);
             console.log(parsedResult)
-            console.log(parsedResult[0].display_name)
+            // console.log(parsedResult[0].display_name)
             if(parsedResult.length>0)
             {
                 var marker = L.marker([parsedResult[0].lat, parsedResult[0].lon]).addTo(map);parsedResult[0].lat

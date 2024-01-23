@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    
-    <template id = "website_feature_snippet" name="NEW FEATURE">
-        <section class="oe_structure container-fluid">
-            <div class="row">
-                <section class="col-sm in-1">
+    <!-- <template id="your_building_block_template" inherit_id="web.html.container">
+        <xpath expr="//div" position="inside">
+            <div t-name="YourBuildingBlock" t-extend="YourBuildingBlock"/>
+        </xpath>
+    </template> -->
 
-                </section>
-                <section class="col-sm in-2">
-                    <h1> Temporary Text </h1>
+
+    <template id = "website_feature_snippet" name="NEW FEATURE">
+        <section class="oe_structure container-fluid option_osm">
+            <div class="container">
+                <h1>FEATURE</h1>
+                <!-- <section class="col-sm in-1">
+
+                </section> -->
+                <!-- <section class="col-sm in-2 s_osm"> -->
+                    <!-- <h1> Temporary Text </h1> -->
                     
-                    <script>createMap()</script>
-                    <div id="map"></div>
+                    <!-- <script>createMap()</script> -->
+                    <!-- <div id="map"></div> -->
                     <!-- <script src="/osm_website/static/src/js/Display.js">init()</script> -->
                     
                     <!-- <script src="/osm_website/static/src/js/hello.js">hello()</script> -->
@@ -53,9 +60,21 @@
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
                     <script type="module" src="main.js"></script>
                     <script></script> -->
-                </section>
+                <!-- </section> -->
             </div>
         </section>
+    </template>
+
+    <template id="osm_feature_snippet_option" inherit_id="website.snippet_options">
+        <xpath expr="." position="inside">
+            <div data-selector="section.option_osm">
+                <!-- <we-row string="Location"> -->
+                    <!-- <script></script> 19:38 for options --> 
+                    <we-input class="o_we_large" string="Address" data-select-data-attribute="" data-no-preview="true" data-attribute-name="mapAddress" placeholder="e.g. De Brouckere, Brussels, Belgium"/>
+                    <!-- <we-input t-att-data-apply-to="apply_to" data-css-property="padding" data-unit="px" data-select-style="0"/> -->
+                <!-- </we-row> -->
+            </div>
+        </xpath>
     </template>
 
     <template id = "website_dynamic_snippet" name="Dynamic Snippet">
@@ -85,12 +104,16 @@
         <xpath expr = "//div[@id='snippet_feature']/div[hasclass('o_panel_body')]" position = "inside">
             <t t-snippet="osm_website.website_feature_snippet"></t>
         </xpath>
-        <xpath expr = "//div[@id='snippet_content']/div[hasclass('o_panel_body')]" position = "inside">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/osm_website/static/src/js/hello.js"></script>
+        </xpath>
+        
+        <!-- <xpath expr = "//div[@id='snippet_content']/div[hasclass('o_panel_body')]" position = "inside">
             <t t-snippet="osm_website.website_content_snippet"></t>
-        </xpath>
+        </xpath> -->
         <!-- xpath for structure was skipped -->
-        <xpath expr = "//div[@id='snippet_effect']/div[hasclass('o_panel_body')]" position = "inside">
+        <!-- <xpath expr = "//div[@id='snippet_effect']/div[hasclass('o_panel_body')]" position = "inside">
             <t t-snippet="osm_website.website_dynamic_snippet"></t>
-        </xpath>
+        </xpath> -->
     </template>
 </odoo>
