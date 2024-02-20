@@ -11,26 +11,19 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            ('prepend','/osm_website/static/src/js/Display.js'),
-            # '/osm_website/static/src/js/OpenLayers.js',
             '/osm_website/static/src/js/snippet.js',
-            # '/osm_website/static/src/js/options.js',
             '/osm_website/static/src/js/hello.js',
-            '/osm_website/static/src/css/snippet.css',
-            '/osm_website/views/snippets/myStyle.css',
             # 'templates/assets.xml',
             '/osm_website/static/src/js/leaflet.js',
             '/osm_website/static/src/js/test_leaflet.js',
             '/osm_website/static/src/css/leaflet.css',
             '/osm_website/static/src/css/test_leaflet.css',
-            '/osm_website/static/src/js/options.js'
+
+            '/osm_website/static/src/js/test1.js',
+            '/osm_website/static/src/js/test1.js'
         ],
         # 'web.assets_backend': [
         #     '/osm_website/static/src/js/hello.js',
         # ],
-        'web.assets_qweb': [
-            # '/osm_website/static/src/xml/snippet.xml',
-            'templates/assets.xml',
-        ]
     }
 }

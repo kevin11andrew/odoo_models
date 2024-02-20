@@ -1,119 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- <template id="your_building_block_template" inherit_id="web.html.container">
-        <xpath expr="//div" position="inside">
-            <div t-name="YourBuildingBlock" t-extend="YourBuildingBlock"/>
-        </xpath>
-    </template> -->
 
-
-    <template id = "website_feature_snippet" name="NEW FEATURE">
-        <section class="oe_structure container-fluid option_osm">
-            <div class="container">
-                <h1>FEATURE</h1>
-                <!-- <section class="col-sm in-1">
-
-                </section> -->
-                <!-- <section class="col-sm in-2 s_osm"> -->
-                    <!-- <h1> Temporary Text </h1> -->
-                    
-                    <!-- <script>createMap()</script> -->
-                    <!-- <div id="map"></div> -->
-                    <!-- <script src="/osm_website/static/src/js/Display.js">init()</script> -->
-                    
-                    <!-- <script src="/osm_website/static/src/js/hello.js">hello()</script> -->
-                    <!-- <script type="text/javascript" src="/osm_website/static/src/js/hello.js">
-                        hello()
-                    </script> -->
-
-
-                    <!-- HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH -->
-                    <!-- <script>hello()</script>
-                    <script>init()</script>
-                    
-                    <style>
-                        #basicMap{
-                        width: 500px;
-                        height: 500px;
-                        margin: 0;
-                    }</style> 
-                    <div id="basicMap"></div> -->
-                    <!-- HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH -->
-
-
-                    <!-- <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css"></link>
-                    <style>
-                        .map {
-                          width: 100%;
-                          height: 400px;
-                        }
-                        td {
-                          padding: 0 0.5em;
-                          text-align: right;
-                        }
-                    </style>
-                    <div id="map" class="map">
-                    <div id="popup"></div>
-                    </div>
-                    <div id="info"></div>
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-                    <script type="module" src="main.js"></script>
-                    <script></script> -->
-                <!-- </section> -->
-            </div>
-        </section>
-    </template>
-
-    <template id="osm_feature_snippet_option" inherit_id="website.snippet_options">
-        <xpath expr="." position="inside">
-            <div data-selector="section.option_osm">
-                <!-- <we-row string="Location"> -->
-                    <!-- <script></script> 19:38 for options --> 
-                    <we-input class="o_we_large" string="Address" data-select-data-attribute="" data-no-preview="true" data-attribute-name="mapAddress" placeholder="e.g. De Brouckere, Brussels, Belgium"/>
-                    <!-- <we-input t-att-data-apply-to="apply_to" data-css-property="padding" data-unit="px" data-select-style="0"/> -->
-                <!-- </we-row> -->
+    <template id="osm_options" inherit_id="website.snippet_options">
+        <xpath expr="//div[@data-js='Box']" position="before">
+            <!-- <div data-js="Map" data-selector=".s_map_osm"> -->
+            <div data-selector=".s_map_osm">
+                <we-input class="o_we_large" string="Address" data-select-data-attribute="" data-no-preview="true" data-attribute-name="mapAddress" placeholder="e.g. De Brouckere, Brussels, Belgium"/>
+                <we-checkbox string="Description" data-no-preview="true" data-show-description="true"/>
             </div>
         </xpath>
     </template>
+
 
     <template id = "website_dynamic_snippet" name="Dynamic Snippet">
-        <section class="oe_structure container-fluid js_dynamic_snippet_osm">
-            <div class="row">
-                <section class="col-sm in-1">
-
-                </section>
-                <section class="col-sm in-2">
-                    <h1> BEST OFFER SALE </h1>
-                    <p id="js_product_sold"></p>
-                    <script>createMap()</script>
-                </section>
+        <section class="s_map_osm oe_structure container-fluid js_dynamic_snippet_osm" t-att-data-map-address="' '.join(filter(None, (user_id.company_id.street, user_id.company_id.city, user_id.company_id.state_id.display_name, user_id.company_id.country_id.display_name)))">
+            <div class="map_container o_not_editable">
+                <h1>
+                    HELLO
+                </h1>
+                <div class="css_non_editable_mode_hidden">
+                    <div>
+                        <!-- class="missing_option_warning alert alert-info rounded-0 fade show d-none d-print-none"> -->
+                        An address must be specified for a map to be embedded
+                    </div>
+                </div>
+                <!-- GMap iframe will be injected in JS -->
+                <div class="s_map_color_filter"/>
             </div>
         </section>
-    </template>
-
-    <template id="website_content_snippet" name="Inner content snippet">
-        <div class="s_text_highlight">
-            <h1> Inner Content </h1>
-            <p>....................</p>
-            <p>....................</p>
-        </div>
     </template>
 
     <template id="static_snippet_structure" inherit_id="website.snippets" name = "osm snippets">
-        <xpath expr = "//div[@id='snippet_feature']/div[hasclass('o_panel_body')]" position = "inside">
-            <t t-snippet="osm_website.website_feature_snippet"></t>
-        </xpath>
+
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/osm_website/static/src/js/hello.js"></script>
+            <script type="text/javascript" src="/osm_website/static/src/js/test2.js"></script>
+        </xpath>
+
+        <xpath expr = "//div[@id='snippet_effect']/div[hasclass('o_panel_body')]" position = "inside">
+            <t t-snippet="osm_website.website_dynamic_snippet" string="OPEN STREET MAPS" t-thumbnail="/osm_website/static/src/img/s_osm.svg"></t>
         </xpath>
         
-        <!-- <xpath expr = "//div[@id='snippet_content']/div[hasclass('o_panel_body')]" position = "inside">
-            <t t-snippet="osm_website.website_content_snippet"></t>
-        </xpath> -->
-        <!-- xpath for structure was skipped -->
-        <!-- <xpath expr = "//div[@id='snippet_effect']/div[hasclass('o_panel_body')]" position = "inside">
-            <t t-snippet="osm_website.website_dynamic_snippet"></t>
-        </xpath> -->
     </template>
+
 </odoo>
