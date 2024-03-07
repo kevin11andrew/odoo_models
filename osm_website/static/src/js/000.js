@@ -34,7 +34,7 @@ publicWidget.registry.Osmmap = publicWidget.Widget.extend({
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map);
             // place=prompt("Place")
-            fetch("https://nominatim.openstreetmap.org/search?format=json&q="+dataset)
+            fetch("https://nominatim.openstreetmap.org/search?format=json&q="+dataset.mapAddress)
                 .then(result => result.json())
                 .then(parsedResult => {
                     console.log(parsedResult.length);

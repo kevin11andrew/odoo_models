@@ -16,6 +16,7 @@ options.registry.Osmmap = options.Class.extend({
         // is dropped, the iframe already exists and doesn't need to be added
         // again.
         console.log("BUILD MAP IN PROGRESS")
+        console.log($target[0])
         if (!this.$target[0].querySelector('.s_map_embedded')) {
             const iframeEl = generateGMapIframe();
             this.$target[0].querySelector('.s_map_osm_color_filter').before(iframeEl);
@@ -31,6 +32,7 @@ options.registry.Osmmap = options.Class.extend({
      * @see this.selectClass for parameters
      */
     async selectDataAttribute(previewMode, widgetValue, params) {
+        log("selectDataAttribute")
         await this._super(...arguments);
         if (['mapAddress', 'mapType', 'mapZoom'].includes(params.attributeName)) {
             this._updateSource();
@@ -70,6 +72,7 @@ options.registry.Osmmap = options.Class.extend({
      * @private
      */
     _updateSource() {
+        log("Update resource")
         const dataset = this.$target[0].dataset;
         const $embedded = this.$target.find('.s_map_embedded');
         const $info = this.$target.find('.missing_option_warning');
