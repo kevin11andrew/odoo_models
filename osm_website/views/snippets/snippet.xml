@@ -20,7 +20,7 @@
                     HELLO
                 </h1>
                 <div class="css_non_editable_mode_hidden">
-                    <div>
+                    <div id="s_map_frame">
                         <!-- class="missing_option_warnin<div class="s_map_color_filter"/>g alert alert-info rounded-0 fade show d-none d-print-none"> -->
                         An address must be specified for a map to be embedded
                     </div>
