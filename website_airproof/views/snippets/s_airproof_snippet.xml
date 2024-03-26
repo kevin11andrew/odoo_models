@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Definition -->
+    <template id="s_airproof_snippet" name="...">
+        <section class="s_airproof_snippet">
+            <div>HELLO</div>
+        </section>
+    </template>
+
+    <!-- Registration -->
+    <template id="snippets" inherit_id="website.snippets">
+        <!-- Specification of position of widget in the the edit menu, here it is before the banner snippet -->
+        <xpath expr="//t[@t-snippet='website.s_banner']" position="before">
+            <t t-snippet="website_airproof.s_airproof_snippet" string="Weather Forecast"/>
+        </xpath>
+    </template>
+
+    <template id="website_airproof.snippets_options" inherit_id="website.snippet_options">
+        <xpath expr="." position="inside">
+            <div data-selector=".s_airproof_snippet" data-js="CustomMethodName">
+                <we-button data-select-class="">Default</we-button>
+                <we-button data-select-class="x_custom_class_01">01</we-button>
+                <we-button data-select-class="x_custom_class_02">02</we-button>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
