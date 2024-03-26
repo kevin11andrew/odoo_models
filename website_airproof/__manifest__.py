@@ -11,8 +11,15 @@
         
     ],
     'assets': {
-        'web.assets_wysiwyg': [
-            'static/src/snippets/s_airproof_snippet/options.js'
+        'web.assets_frontend': [
+            # The following 2 ways of specification do not work
+            # 'static/src/snippets/s_airproof_snippet/options.js',
+            # '/static/src/js/options.js',
+            'website_airproof/static/src/js/options.js'
+            # 'static/src/snippets/s_airproof_snippet/000.js'
          ],
+        #  'web.assets_backend': [
+        #     'static/src/snippets/s_airproof_snippet/options.js'
+        #  ],
     }
 }

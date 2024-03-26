@@ -19,9 +19,10 @@
     <template id="website_airproof.snippets_options" inherit_id="website.snippet_options">
         <xpath expr="." position="inside">
             <div data-selector=".s_airproof_snippet" data-js="CustomMethodName">
-                <we-button data-select-class="">Default</we-button>
+                <!-- <we-button data-select-class="">Default</we-button>
                 <we-button data-select-class="x_custom_class_01">01</we-button>
-                <we-button data-select-class="x_custom_class_02">02</we-button>
+                <we-button data-select-class="x_custom_class_02">02</we-button> -->
+                <we-input class="o_we_large" data-target=".s_airproof_snippet" string="Address" data-select-address="" data-no-preview="true"/>
             </div>
         </xpath>
     </template>
