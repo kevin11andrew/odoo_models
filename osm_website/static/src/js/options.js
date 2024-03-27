@@ -7,6 +7,8 @@ import {generateGMapIframe, generateGMapLink} from 'website.utils';
 
 console.log("Loaded Options.js")
 options.registry.Osmmap = options.Class.extend({
+    selector: '.s_map_osm',
+
     /**
      * @override
      */
@@ -16,12 +18,44 @@ options.registry.Osmmap = options.Class.extend({
         // is dropped, the iframe already exists and doesn't need to be added
         // again.
         console.log("BUILD MAP IN PROGRESS")
-        console.log($target[0])
-        if (!this.$target[0].querySelector('.s_map_embedded')) {
-            const iframeEl = generateGMapIframe();
-            this.$target[0].querySelector('.s_map_osm_color_filter').before(iframeEl);
-            this._updateSource();
+        console.log("START IN PROGRESS inside 000 js")
+        if (!this.el.querySelector('.s_map_embedded')) {
+            // The iframe is not found inside the snippet. This is probably due
+            // the sanitization of a field during the save, like in a product
+            // description field.
+            // In such cases, reconstruct the iframe.
+            const dataset = this.el.dataset;
+            // if (dataset.mapAddress) {
+            //     const iframeEl = generateGMapIframe();
+            //     iframeEl.setAttribute('src', generateGMapLink(dataset));
+            //     this.el.querySelector('.s_map_osm_color_filter').before(iframeEl);
+            // }
+
+            // console.log("dataset.mapAddress")
+            // console.log(dataset.mapAddress)
+            var map = L.map('s_map_frame').setView([51.505, -0.09], 14);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            // place=prompt("Place")
+            // fetch("https://nominatim.openstreetmap.org/search?format=json&q="+dataset.mapAddress)
+            //     .then(result => result.json())
+            //     .then(parsedResult => {
+            //         console.log(parsedResult.length);
+            //         console.log(parsedResult)
+            //         // console.log(parsedResult[0].display_name)
+            //         if(parsedResult.length>0)
+            //         {
+            //             var marker = L.marker([parsedResult[0].lat, parsedResult[0].lon]).addTo(map);parsedResult[0].lat
+            //             map.setView(new L.LatLng(parsedResult[0].lat, parsedResult[0].lon),14)
+            //         }
+            //         else
+            //             console.log("Not Found")
+            //     });
+
         }
+        return this._super(...arguments);
     },
 
     //--------------------------------------------------------------------------
@@ -32,62 +66,31 @@ options.registry.Osmmap = options.Class.extend({
      * @see this.selectClass for parameters
      */
     async selectDataAttribute(previewMode, widgetValue, params) {
-        log("selectDataAttribute")
+        console.log("selectDataAttribute")
+        console.log(params)
         await this._super(...arguments);
         if (['mapAddress', 'mapType', 'mapZoom'].includes(params.attributeName)) {
             this._updateSource();
         }
     },
-    /**
-     * @see this.selectClass for parameters
-     */
-    async showDescription(previewMode, widgetValue, params) {
-        const descriptionEl = this.$target[0].querySelector('.description');
-        if (widgetValue && !descriptionEl) {
-            this.$target.append($(`
-                <div class="description">
-                    <font>${_t('Visit us:')}</font>
-                    <span>${_t('Our office is open Monday – Friday 8:30 a.m. – 4:00 p.m.')}</span>
-                </div>`)
-            );
-        } else if (!widgetValue && descriptionEl) {
-            descriptionEl.remove();
-        }
-    },
 
-    //--------------------------------------------------------------------------
-    // Private
-    //--------------------------------------------------------------------------
-
-    /**
-     * @override
-     */
-    _computeWidgetState(methodName, params) {
-        if (methodName === 'showDescription') {
-            return !!this.$target[0].querySelector('.description');
-        }
-        return this._super(...arguments);
-    },
-    /**
-     * @private
-     */
     _updateSource() {
-        log("Update resource")
-        const dataset = this.$target[0].dataset;
-        const $embedded = this.$target.find('.s_map_embedded');
-        const $info = this.$target.find('.missing_option_warning');
-        if (dataset.mapAddress) {
-            const url = generateGMapLink(dataset);
-            if (url !== $embedded.attr('src')) {
-                $embedded.attr('src', url);
-            }
-            $embedded.removeClass('d-none');
-            $info.addClass('d-none');
-        } else {
-            $embedded.attr('src', 'about:blank');
-            $embedded.addClass('d-none');
-            $info.removeClass('d-none');
-        }
+        console.log("Update Source Triggered")
+        // const dataset = this.$target[0].dataset;
+        // const $embedded = this.$target.find('.s_map_embedded');
+        // const $info = this.$target.find('.missing_option_warning');
+        // if (dataset.mapAddress) {
+        //     const url = generateGMapLink(dataset);
+        //     if (url !== $embedded.attr('src')) {
+        //         $embedded.attr('src', url);
+        //     }
+        //     $embedded.removeClass('d-none');
+        //     $info.addClass('d-none');
+        // } else {
+        //     $embedded.attr('src', 'about:blank');
+        //     $embedded.addClass('d-none');
+        //     $info.removeClass('d-none');
+        // }
     },
 });
 

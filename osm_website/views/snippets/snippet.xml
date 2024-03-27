@@ -3,11 +3,11 @@
 
     <template id="s_map_osm_options" inherit_id="website.snippet_options">
         <xpath expr="//div[@data-js='Box']" position="before">
-             <div data-js="OSM_Map" data-selector=".s_map_osm">
-            <div data-selector=".s_map_osm">
+             <div data-js="Osmmap" data-selector=".s_map_osm">
+            <!-- <div data-selector=".s_map_osm"> -->
                 <we-input class="o_we_large" string="Address" data-select-data-attribute="" data-no-preview="true" data-attribute-name="mapAddress" placeholder="e.g. De Brouckere, Brussels, Belgium"/>
                 <we-checkbox string="Description" data-no-preview="true" data-show-description="true"/>
-            </div>
+            <!-- </div> -->
              </div>
         </xpath>
     </template>
@@ -44,16 +44,22 @@
         
     </template>
 
-    <record id="osm_website.s_map_osm_000_scss" model="ir.asset">
+<record id="osm_website.s_map_osm_000_scss" model="ir.asset">
     <field name="name">OSM_Map 000 SCSS</field>
     <field name="bundle">web.assets_frontend</field>
     <field name="path">osm_website/static/src/js/000.scss</field>
 </record>
-
+    
 <record id="osm_website.s_map_osm_000_js" model="ir.asset">
     <field name="name">OSM_Map 000 JS</field>
     <field name="bundle">web.assets_frontend</field>
     <field name="path">osm_website/static/src/js/000.js</field>
 </record>
+
+<!-- <record id="osm_website.s_map_osm_options_js" model="ir.asset">
+    <field name="name">OSM_Map Options JS</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">osm_website/static/src/js/options.js</field>
+</record> -->
 
 </odoo>

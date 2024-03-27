@@ -39,8 +39,9 @@
             #'/osm_website/static/src/js/test1.js',
             #'/osm_website/static/src/js/test1.js'
         ],
-        # 'web.assets_backend': [
-        #     '/osm_website/static/src/js/hello.js',
-        # ],
+        'web.assets_backend': [
+            '/osm_website/static/src/js/options.js',
+            '/osm_website/static/src/js/leaflet.js',
+        ],
     }
 }
