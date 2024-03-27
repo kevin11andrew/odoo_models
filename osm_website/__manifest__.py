@@ -26,8 +26,8 @@
             '/osm_website/static/src/css/leaflet.css',
             '/osm_website/static/src/css/test_leaflet.css',
             '/osm_website/static/src/js/options.js',
-            'osm_website/static/src/js/000.js',
-            'osm_website/static/src/js/000.scss',
+            '/osm_website/static/src/js/000.js',
+            '/osm_website/static/src/js/000.scss',
             '/osm_website/static/src/js/leaflet.js',
             #'/osm_website/static/src/js/snippet.js',
             #'/osm_website/static/src/js/hello.js',
@@ -41,6 +41,7 @@
         ],
         'web.assets_backend': [
             '/osm_website/static/src/js/options.js',
+            '/osm_website/static/src/js/000.js',
             '/osm_website/static/src/js/leaflet.js',
         ],
     }

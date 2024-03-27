@@ -25,6 +25,7 @@
                         An address must be specified for a map to be embedded
                     </div>
                 </div>
+                <!-- <div id="osm_map"></div> -->
                 <!-- GMap iframe will be injected in JS -->
                 <div class="s_map_osm_color_filter"/>
             </div>
