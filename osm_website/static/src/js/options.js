@@ -27,72 +27,35 @@ options.registry.Osmmap = options.Class.extend({
             // const iframeEl = generateGMapIframe();
 
             const divEl = document.createElement('div');
+            const aEl = document.createElement('a');
+            aEl.setAttribute('id', 'osm_map_link');
             divEl.setAttribute('id', 'osm_map');
-            // this.el.querySelector('.s_map_color_filter').before(divEl);
 
+            // divEl.classList.add('o_not_editable');
+            divEl.classList.add('row');
+            divEl.setAttribute('width', '100%');
+            divEl.setAttribute('height', '100%');
+            divEl.setAttribute('frameborder', '0');
+            divEl.setAttribute('scrolling', 'no');
+            divEl.setAttribute('marginheight', '0');
+            divEl.setAttribute('marginwidth', '0');
+
+            // this.el.querySelector('.s_map_color_filter').before(divEl);
+            this.$target[0].querySelector('.s_map_osm_color_filter').before(divEl);
             this.$target[0].querySelector('.s_map_osm_color_filter').before(divEl);
             // this._updateSource();
+
+           
         }
     },
+    // destroy()
+    // {
+    //     this.$target[0].querySelector('#osm_map').remove()
+    // }
 
-    //--------------------------------------------------------------------------
-    // Options
-    //--------------------------------------------------------------------------
 
-    /**
-     * @see this.selectClass for parameters
-     */
-    async selectDataAttribute(previewMode, widgetValue, params) {
-        console.log("selectDataAttribute")
-        console.log(params)
-        await this._super(...arguments);
-        if (['mapAddress', 'mapType', 'mapZoom'].includes(params.attributeName)) {
-            this._updateSource();
-        }
-    },
-
-    _updateSource() {
-        console.log("Update Source Triggered")
-        // const dataset = this.$target[0].dataset;
-        // const $embedded = this.$target.find('.s_map_embedded');
-        // const $info = this.$target.find('.missing_option_warning');
-        // if (dataset.mapAddress) {
-        //     const url = generateGMapLink(dataset);
-        //     if (url !== $embedded.attr('src')) {
-        //         $embedded.attr('src', url);
-        //     }
-        //     $embedded.removeClass('d-none');
-        //     $info.addClass('d-none');
-        // } else {
-        //     $embedded.attr('src', 'about:blank');
-        //     $embedded.addClass('d-none');
-        //     $info.removeClass('d-none');
-        // }
-    },
 });
 
 export default {
     Map: options.registry.Osmmap,
 };
-
-
-
-///** @odoo-module **/
-//import  { renderToElement } from "@web/core/utils/render";
-//import publicWidget from "@web/legacy/js/public/public_widget" ;
-//const OSMSnippet = publicWidget.Widget.extend({
-//    selector: ".s_map_osm",
-//    // start()
-//    onBuilt()
-//    {
-//        console.log("HELLO");
-//        this.containerEl=this.$target[0].querySelector(".s_map_color_filter");
-//        this.containerEl.appendChild(renderToElement("osm_website.map_data",{
-//            widget:this
-//        })
-//        );
-//    },
-//    destroy() { this.containerEl.remove() }
-//});
-//
-//publicWidget.registry.s_map_osm = OSMSnippet;

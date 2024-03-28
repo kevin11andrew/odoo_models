@@ -55,6 +55,14 @@ publicWidget.registry.Osmmap = publicWidget.Widget.extend({
         if (!this.el.querySelector('#osm_map')) {
             const divEl = document.createElement('div');
                 divEl.setAttribute('id', 'osm_map');
+
+                divEl.classList.add('s_map_embedded', 'o_not_editable');
+                divEl.setAttribute('width', '100%');
+                divEl.setAttribute('height', '100%');
+                divEl.setAttribute('frameborder', '0');
+                divEl.setAttribute('scrolling', 'no');
+                divEl.setAttribute('marginheight', '0');
+                divEl.setAttribute('marginwidth', '0');
                     // 'src', generateGMapLink(dataset));
                 this.el.querySelector('.s_map_color_filter').before(divEl);
         }
@@ -93,10 +101,16 @@ publicWidget.registry.Osmmap = publicWidget.Widget.extend({
                         else
                             console.log("Not Found")
                     });
+                    function onMapClick(e) {
+                        window.open("https://nominatim.openstreetmap.org/ui/search.html?q="+dataset.mapAddress);
+                    }
+                    
+                    map.on('click', onMapClick);
             }
         // }
         return this._super(...arguments);
     },
+    
 });
 
 console.log("000 JS before end")
