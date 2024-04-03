@@ -23,7 +23,8 @@ options.registry.Osmmap = options.Class.extend({
         // this.$target[0].querySelector('s_map_osm_color_filter').before(map);
         // return this._super(...arguments);
 
-        if (!this.$target[0].querySelector('#osm_map')) {
+        // if (!this.$target[0].querySelector('#osm_map')) {
+        if ( !document.querySelector("#osm_map")){
             // const iframeEl = generateGMapIframe();
 
             const divEl = document.createElement('div');
